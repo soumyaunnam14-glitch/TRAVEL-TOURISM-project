@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover destinations and send a travel enquiry with Travel Tourism.">
+  <title>Travel Tourism | Find your next escape</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Travel Tourism home"><span class="brand-mark">✦</span> Travel<span>Tourism</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#destinations">Destinations</a>
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-cta" href="#plan">Plan a trip <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">YOUR NEXT STORY STARTS HERE</p>
+        <h1>Find your own<br><em>kind of somewhere.</em></h1>
+        <p class="hero-copy">Explore remarkable places, discover new experiences, and let us help you plan a trip worth remembering.</p>
+        <a class="button button-light" href="#destinations">Explore destinations <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-note"><span class="note-line"></span> Travel slowly. Remember forever.</div>
+    </section>
+
+    <section class="intro section-wrap">
+      <div>
+        <p class="eyebrow">A WORLD TO DISCOVER</p>
+        <h2>Less scrolling.<br><em>More exploring.</em></h2>
+      </div>
+      <p class="intro-text">From peaceful beaches to mountain escapes and lively cities, find inspiration for your next journey. Choose a place that feels right, then send us your travel plans.</p>
+    </section>
+
+    <section class="destinations section-wrap" id="destinations">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Places to fall for</h2></div>
+        <p>Handpicked ideas for your next adventure.</p>
+      </div>
+      <div class="filters">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search places..." aria-label="Search destinations"></label>
+        <label class="sr-only" for="category-filter">Filter by category</label>
+        <select id="category-filter">
+          <option value="all">All experiences</option>
+          <option value="Beach">Beach</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Culture">Culture</option>
+          <option value="Nature">Nature</option>
+        </select>
+      </div>
+      <div id="destination-grid" class="destination-grid" aria-live="polite">
+        <div class="loading-card">Finding beautiful places...</div>
+      </div>
+      <p class="section-footnote">Destination details are provided as inspiration. Prices and travel arrangements are confirmed after your enquiry.</p>
+    </section>
+
+    <section class="quote-band" id="how-it-works">
+      <div class="quote-symbol">“</div>
+      <p>We travel not to escape life,<br>but for life not to escape us.</p>
+      <div class="quote-rule"></div>
+      <span>YOUR JOURNEY, YOUR WAY</span>
+    </section>
+
+    <section class="plan-section" id="plan">
+      <div class="plan-copy">
+        <p class="eyebrow light">MAKE IT HAPPEN</p>
+        <h2>Your next adventure<br>is closer than <em>you think.</em></h2>
+        <p>Tell us where you want to go and when. Send a trip enquiry and keep your plans moving.</p>
+        <div class="mini-step"><span>01</span><div><strong>Choose a destination</strong><p>Find a place that matches your travel mood.</p></div></div>
+        <div class="mini-step"><span>02</span><div><strong>Share your trip details</strong><p>Let us know your dates and group size.</p></div></div>
+        <div class="mini-step"><span>03</span><div><strong>We receive your enquiry</strong><p>Your request is saved for follow-up.</p></div></div>
+      </div>
+      <form id="trip-form" class="trip-form">
+        <div class="form-heading"><p class="eyebrow">TRIP ENQUIRY</p><h3>Let's plan something good.</h3><p>Fields marked * are required.</p></div>
+        <label for="full-name">Your name *</label>
+        <input id="full-name" name="name" type="text" maxlength="80" autocomplete="name" required placeholder="Enter your full name">
+        <label for="email">Email address *</label>
+        <input id="email" name="email" type="email" maxlength="254" autocomplete="email" required placeholder="you@example.com">
+        <label for="destination-select">Destination *</label>
+        <select id="destination-select" name="destinationId" required>
+          <option value="">Choose a destination</option>
+        </select>
+        <div class="form-row">
+          <div><label for="travel-date">Travel date *</label><input id="travel-date" name="travelDate" type="date" required></div>
+          <div><label for="travellers">Travellers *</label><input id="travellers" name="travellers" type="number" min="1" max="20" value="2" required></div>
+        </div>
+        <label for="message">Anything else? <span class="optional">(optional)</span></label>
+        <textarea id="message" name="message" rows="3" maxlength="1000" placeholder="Tell us about your plans..."></textarea>
+        <button class="button button-dark submit-button" type="submit">Send trip enquiry <span aria-hidden="true">↗</span></button>
+        <p class="privacy-note">Your details are used to manage this enquiry. Do not enter payment details here.</p>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="closing section-wrap">
+      <p class="eyebrow">TAKE THE SCENIC ROUTE</p>
+      <h2>Some places stay with you.</h2>
+      <a href="#plan" class="text-link">Start planning <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">✦</span> Travel<span>Tourism</span></a>
+    <p>Made for curious minds and open roads.</p>
+    <span>© <span id="year"></span> Travel Tourism · Student project</span>
+  </footer>
+</body>
+</html>
